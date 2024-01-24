@@ -89,7 +89,7 @@ function BasicExample() {
               <Nav.Link
                 href="/login"
                 onClick={() => handleNavLinkClick('login')}
-                className={activeNavLink === 'register' ? 'active' : ''}
+                className={activeNavLink === 'login' ? 'active' : ''}
               >
                 <span className="navlink-text">
                   Login
