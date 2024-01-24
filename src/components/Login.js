@@ -1,13 +1,14 @@
 import {
-  useRef, useState, useEffect, useContext,
+  useRef, useState, useEffect
 } from 'react';
-import { useRef, useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { loginUser } from '../redux/authSlice';
+import { useNavigate } from 'react-router';
 
 const Login = () => {
   const dispatch = useDispatch();
-  const { loading, success, error } = useSelector((state) => state.auth);
+  const navigate = useNavigate();
+  const { loading, success } = useSelector((state) => state.auth);
   const emailRef = useRef();
   const errRef = useRef();
 
@@ -22,6 +23,12 @@ const Login = () => {
   useEffect(() => {
     setErrMsg('');
   }, [email, password]);
+
+  useEffect(() => {
+    if (success) {
+      navigate('/');
+    }
+  }, [success]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -38,15 +45,6 @@ const Login = () => {
 
   return (
     <>
-      {success ? (
-        <section>
-          <h1>You are logged in!</h1>
-          <br />
-          <p>
-            <a href="#">Go to Home</a>
-          </p>
-        </section>
-      ) : (
         <section>
           <p ref={errRef} className={errMsg ? 'errmsg' : 'offscreen'} aria-live="assertive">{errMsg}</p>
           <h1>Sign In</h1>
@@ -72,7 +70,9 @@ const Login = () => {
               value={password}
               required
             />
-            <button>Sign In</button>
+            <button disabled={loading}>
+              {loading ? 'Signing In...' : 'Sign In'}
+            </button>
           </form>
           <p>
             Need an Account?
@@ -83,7 +83,6 @@ const Login = () => {
             </span>
           </p>
         </section>
-      )}
     </>
   );
 };

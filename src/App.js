@@ -8,7 +8,7 @@ import ServiceList from './components/services';
 import FormExample from './components/reservation-form';
 import ServiceDetails from './components/serviceDetails';
 import Register from './components/Register';
-// import Login from './components/Login';
+import Login from './components/Login';
 
 const App = () => (
   <Provider store={store}>
@@ -24,7 +24,7 @@ const App = () => (
           <Route path="/add-reservation" element={<div>Link Content</div>} />
           <Route path="/" element={<ServiceList />} />
           <Route path="/register" element={<Register />} />
-          {/* <Route path="/login" element={<Login />} /> */}
+          <Route path="/login" element={<Login />} />
         </Routes>
       </>
     </Router>
