@@ -86,6 +86,15 @@ function BasicExample() {
                   register
                 </span>
               </Nav.Link>
+              <Nav.Link
+                href="/login"
+                onClick={() => handleNavLinkClick('login')}
+                className={activeNavLink === 'register' ? 'active' : ''}
+              >
+                <span className="navlink-text">
+                  Login
+                </span>
+              </Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Container>

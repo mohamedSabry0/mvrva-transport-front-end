@@ -8,6 +8,7 @@ import ServiceList from './components/services';
 import FormExample from './components/reservation-form';
 import ServiceDetails from './components/serviceDetails';
 import Register from './components/Register';
+import Login from './components/Login';
 
 
 
@@ -25,7 +26,8 @@ const App = () => {
             <Route path="/my-reservations" element={<div>Action 3.1 Content</div>} />
             <Route path="/add-reservation" element={<div>Link Content</div>} />
             <Route path="/" element={<ServiceList />} /> 
-            <Route path="/register" element={<Register/>} />               
+            <Route path="/register" element={<Register/>} />
+            <Route path="/login" element={<Login/>} />               
         </Routes>
         </>
       </Router>
