@@ -1,8 +1,12 @@
+// ServiceList.js
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import Carousel from 'react-bootstrap/Carousel';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
-  Card, Button, Row, Col,
+  Card, Row, Col, Container,
 } from 'react-bootstrap';
+import { faTwitter, faFacebook, faGithub } from '@fortawesome/free-brands-svg-icons';
 import { useDispatch, useSelector } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
 import { fetchServices } from '../redux/servicesSlice';
@@ -51,14 +55,48 @@ const ServiceList = () => {
               <Row xs={1} md={2} lg={3} xl={4} className="d-flex justify-content-between card-body">
                 {group.map((service) => (
                   <Col key={uuidv4()}>
-                    <Card className="card-sizing">
-                      <Card.Img variant="top" src={service.image} alt={service.name} />
-                      <Card.Body>
-                        <Card.Title>{service.name}</Card.Title>
-                        <Card.Text>{service.description}</Card.Text>
-                        <Button variant="primary">Learn More</Button>
-                      </Card.Body>
-                    </Card>
+                    {/* Wrap each card with Link component */}
+                    <Link to={`/services/${service.id}`} className="card-link">
+                      <Card className="card-sizing">
+                        <Card.Img variant="top" src={service.image} alt={service.name} />
+                        <Card.Body>
+                          <Card.Title>{service.name}</Card.Title>
+                          <Card.Text>{service.description}</Card.Text>
+                          <Container className="mt-4 py-3 sc-container d-flex flex-column">
+                            <div className="text-center">
+                              <a
+                                href="https://twitter.com"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="social-icon"
+                                aria-label="Visit Twitter profile"
+                              >
+                                <FontAwesomeIcon icon={faTwitter} size="2x" />
+                              </a>
+                              <a
+                                href="https://facebook.com"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="social-icon"
+                                aria-label="Visit Facebook profile"
+                              >
+                                <FontAwesomeIcon icon={faFacebook} size="2x" />
+                              </a>
+                              <a
+                                href="https://github.com"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="social-icon"
+                                aria-label="Visit GitHub profile"
+                              >
+                                <FontAwesomeIcon icon={faGithub} size="2x" />
+                              </a>
+
+                            </div>
+                          </Container>
+                        </Card.Body>
+                      </Card>
+                    </Link>
                   </Col>
                 ))}
               </Row>

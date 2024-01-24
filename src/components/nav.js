@@ -8,31 +8,44 @@ import logoImg from '../assets/Logo.png';
 import '../css/custom.css';
 
 function BasicExample() {
-  // Initialize activeNavLink based on localStorage or default to 'services'
   const storedValue = localStorage.getItem('activeNavLink');
   const initialActiveNavLink = storedValue;
   const [activeNavLink, setActiveNavLink] = useState(initialActiveNavLink);
+  const [userRoles, setUserRoles] = useState([]);
+  const [isAdmin, setIsAdmin] = useState(false);
 
-  // Function to handle NavLink click and update active state and localStorage
   const handleNavLinkClick = (navLink) => {
     setActiveNavLink(navLink);
     localStorage.setItem('activeNavLink', navLink);
   };
 
-  // Clear localStorage when the component is unmounted
+  useEffect(() => {
+    // Fetch user roles from the API
+    // Replace 'your_api_endpoint' with the actual API endpoint
+    fetch('http://localhost:3000/member_details')
+      .then((response) => response.json())
+      .then((data) => {
+        // Assuming the API response contains an array of user roles
+        setUserRoles(data.roles);
+        setIsAdmin(data.roles.includes('admin'));
+      })
+      .catch((error) => console.error('Error fetching user roles:', error));
+    setIsAdmin(true);
+  }, []);
+
   useEffect(() => () => {
     localStorage.removeItem('activeNavLink');
   }, []);
 
   return (
     <>
-      {/* Navbar Component */}
       <Navbar expand="lg" className="text-start nav-body">
         <Navbar.Brand
           href="/dashboard"
         >
+        <Navbar.Brand href="/">
           <img
-            src={logoImg} // Replace with the actual path to your logo image
+            src={logoImg}
             alt="MVRVA Transport Logo"
             className="logo-img"
           />
@@ -95,6 +108,28 @@ function BasicExample() {
                   Login
                 </span>
               </Nav.Link>
+              {userRoles.includes('admin') && (
+                <Nav.Link
+                  href="/add-reservation"
+                  onClick={() => handleNavLinkClick('add-reservation')}
+                  className={activeNavLink === 'add-reservation' ? 'active' : ''}
+                >
+                  <span className="navlink-text">
+                    Add Reservation
+                  </span>
+                </Nav.Link>
+              )}
+              {isAdmin && (
+                <Nav.Link
+                  href="/add-reservation"
+                  onClick={() => handleNavLinkClick('add-reservation')}
+                  className={activeNavLink === 'add-reservation' ? 'active' : ''}
+                >
+                  <span className="navlink-text">
+                    Add Reservation
+                  </span>
+                </Nav.Link>
+              )}
             </Nav>
           </Navbar.Collapse>
         </Container>
@@ -127,7 +162,6 @@ function BasicExample() {
             >
               <FontAwesomeIcon icon={faGithub} size="2x" />
             </a>
-
           </div>
           <div className="text-center mt-2 copy-right-text">
             © 2024 MVRVA Transport.

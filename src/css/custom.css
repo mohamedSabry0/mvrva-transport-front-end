@@ -1,3 +1,11 @@
+
+:root {
+  --main-color: #fff;
+  --primary-color: #97c010;
+  --secondary-color: #464646;
+  --border-color: #dee2e6;
+}
+
 /* Navbar CSS responsiveness for desktop */
 @media screen and (min-width: 992px) {
   .nav-body {
@@ -11,6 +19,7 @@
     justify-content: space-between;
     padding: 8px;
     border-right: 1px solid #dee2e6;
+    border-right: 1px solid var(--border-color);
     overflow: hidden;
   }
 
@@ -25,12 +34,18 @@
     font-weight: 800;
   }
 
+  .navlink-text {
+    font-size: 20px;
+    font-weight: 800;
+  }
+
   .sc-container {
     margin-top: 50px;
   }
 
   .social-icon {
     color: #464646;
+    color: var(--secondary-color);
     font-size: 12px;
     padding: 5px;
   }
@@ -39,6 +54,8 @@
     font-weight: bold;
     color: #fff;
     background-color: #97c010;
+    color: var(--main-color);
+    background-color: var(--primary-color);
     width: calc(100% + 2 * 132px);
     transition: 0.3s ease-in-out;
   }
@@ -53,6 +70,10 @@
     margin-top: 50px;
   }
 
+    color: var(--main-color);
+  }
+
+  /* Services CSS */
   .carousel-body {
     height: 95vh;
     width: 90%;
@@ -61,6 +82,16 @@
 
   .carousel-bg {
     background: #97c010;
+    overflow: hidden;
+  }
+  
+  .service-card {
+    margin-left: 350px;
+    margin-top: 50px;
+  }
+
+  .carousel-bg {
+    background: var(--main-color);
     height: 100vh;
     width: 100%;
     margin-left: 5.5%;
@@ -70,15 +101,54 @@
     margin-bottom: 20%;
   }
 
+.carousel-control-prev {
+    position: fixed;
+    top: 50%;
+    left:14.8%;
+    background-color: #97c010;
+    height: 45px;
+    width: 90px;
+    border-top-right-radius: 35px;  /* Adjust the value as needed */
+    border-bottom-right-radius: 35px;
+    font-size: 12px;  /* Adjust the value as needed */
+  }
+
+  .carousel-control-next {
+    position: fixed;
+    top: 50%;
+    right:0;
+    background-color: #97c010;
+    height: 45px;
+    width: 90px;
+    border-top-left-radius: 35px;  /* Adjust the value as needed */
+    border-bottom-left-radius: 35px;
+    font-size: 12px;  /* Adjust the value as needed */
+  }
+
   .card-sizing {
     width: 20rem;
     height: 30rem;
     margin-left: -35%;
+    border:none;
+  }
+
+  .showcase {
+    margin-left: 500px;
+
+    color: #fff;
+  }
+
+  /* Service */
+  .service-card {
+    margin-left: 350px;
+    margin-top: 50px;
   }
 }
 
 /* Responsivness for mobile */
 @media screen and (max-width: 991px) and (min-width: 320px) {
+
+@media screen and (max-width: 768px) and (min-width: 320px) {
   /* navbar */
   .nav-body {
     background: transparent;
@@ -108,6 +178,7 @@
 
   .nav-body a.active .navlink-text {
     color: #fff;
+    color: var(--main-color);
   }
 
   /* logo */
