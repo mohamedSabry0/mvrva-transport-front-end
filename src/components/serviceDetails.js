@@ -1,6 +1,5 @@
 // ServiceDetails.js
 import React, { useEffect } from 'react';
-import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams, Link } from 'react-router-dom';
 import { fetchServiceDetails } from '../redux/serviceDetailsSlice';
@@ -48,16 +47,6 @@ const ServiceDetails = () => {
       {/* Add more details as needed */}
     </div>
   );
-};
-
-ServiceDetails.propTypes = {
-  params: PropTypes.shape({
-    id: PropTypes.string.isRequired,
-  }),
-};
-
-ServiceDetails.defaultProps = {
-  params: {},
 };
 
 export default ServiceDetails;

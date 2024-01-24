@@ -25,7 +25,11 @@ const ServiceList = () => {
   }, [dispatch]);
 
   if (status === 'loading') {
-    return <div>Loading...</div>;
+    return (
+      <div className="d-flex justify-content-center align-items-center" style={{ height: '100vh' }}>
+        <h3>Loading...</h3>
+      </div>
+    );
   }
 
   if (status === 'failed') {

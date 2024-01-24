@@ -7,6 +7,15 @@
   pointer-events: none;
 }
 
+.form-background {
+  background-color: #97c010;
+  height: 100vh;
+}
+
+.form-control {
+  color: white;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
