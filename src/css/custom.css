@@ -1,134 +1,137 @@
 /* Navbar CSS responsiveness for desktop */
-@media screen and (min-width:992px) {
-    .nav-body {
-        position: fixed;
-        top: 0;
-        left: 20px;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        justify-content: space-between;
-        padding: 8px; 
-        border-right: 1px solid #dee2e6; 
-        overflow: hidden;
-    }
-    
-    .logo-img {
-        height: 150px; /* Adjust the height as needed */
-        width: auto; /* Maintain the aspect ratio */
-        margin-left: 26px; /* Optional: Add margin for spacing */
-      }
-    
-    .navlink-text{
-        font-size: 20px;
-        font-weight: 800;
-    }
-    .sc-container{
-        margin-top: 50px;
-    }
-    .social-icon{
-        color: #464646;
-        font-size: 12px;
-        padding: 5px;
-    }
-    
-    .nav-body a.active {
-        font-weight: bold;
-        color: #ffffff; 
-        background-color: #97C010; 
-        width: calc(100% + 2 * 132px); 
-        transition: 0.3s ease-in-out;
-    }
-    
-    .nav-body a.active .navlink-text{
-        color:#ffffff;
-    }
-    
-    /* Service */
-    .service-card{
-        margin-left: 350px;
-        margin-top: 50px;
-    }
+@media screen and (min-width: 992px) {
+  .nav-body {
+    position: fixed;
+    top: 0;
+    left: 20px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 8px;
+    border-right: 1px solid #dee2e6;
+    overflow: hidden;
+  }
+
+  .logo-img {
+    height: 150px; /* Adjust the height as needed */
+    width: auto; /* Maintain the aspect ratio */
+    margin-left: 26px; /* Optional: Add margin for spacing */
+  }
+
+  .navlink-text {
+    font-size: 20px;
+    font-weight: 800;
+  }
+
+  .sc-container {
+    margin-top: 50px;
+  }
+
+  .social-icon {
+    color: #464646;
+    font-size: 12px;
+    padding: 5px;
+  }
+
+  .nav-body a.active {
+    font-weight: bold;
+    color: #fff;
+    background-color: #97c010;
+    width: calc(100% + 2 * 132px);
+    transition: 0.3s ease-in-out;
+  }
+
+  .nav-body a.active .navlink-text {
+    color: #fff;
+  }
+
+  /* Service */
+  .service-card {
+    margin-left: 350px;
+    margin-top: 50px;
+  }
+
+  .carousel-body {
+    height: 95vh;
+    width: 90%;
+    margin-left: 10%;
+  }
+
+  .carousel-bg {
+    background: #97c010;
+    height: 100vh;
+    width: 100%;
+    margin-left: 5.5%;
+  }
+
+  .card-body {
+    margin-bottom: 20%;
+  }
+
+  .card-sizing {
+    width: 20rem;
+    height: 30rem;
+    margin-left: -35%;
+  }
+}
+
+/* Responsivness for mobile */
+@media screen and (max-width: 991px) and (min-width: 320px) {
+  /* navbar */
+  .nav-body {
+    background: transparent;
+  }
+
+  .navlink-text {
+    font-size: 12px;
+    font-weight: 600;
+  }
+
+  button.navbar-toggler {
+    margin-right: 40rem;
+    margin-top: 3rem;
+    border: none;
+  }
+
+  span.navlink-text {
+    margin-right: 30rem;
+  }
+
+  .nav-body a.active {
+    font-weight: bold;
+    color: #fff;
+    background-color: #97c010;
+    transition: 0.3s ease-in-out;
+  }
+
+  .nav-body a.active .navlink-text {
+    color: #fff;
+  }
+
+  /* logo */
+  .logo-img {
+    display: none;
+  }
+
+  /* social media icons */
+  .sc-container {
+    display: none;
+  }
+
+  .social-icon {
+    display: none;
+  }
+
+  .copy-right-text {
+    display: none;
+  }
 
 
-    .carousel-body{
-        height: 95vh;
-        width: 90%;
-        margin-left: 10%;
-        
-    }
-    .carousel-bg{
-        background: #97C010;
-        height: 100vh;
-        width: 100%;
-        margin-left: 5.5%;
-    }
-
-    .card-body{
-        margin-bottom: 20%;
-    }
-    
-    .card-sizing{
-        width: 20rem;
-        height: 30rem;
-        margin-left: -35%;
-    }
-    }
-    /* Responsivness for mobile*/
-    @media screen and (max-width:991px) and (min-width:320px) {
-        /* navbar */
-        .nav-body{
-            background: transparent;
-        }
-    
-        .navlink-text{
-            font-size: 12px;
-            font-weight: 600;
-        }
-    
-        button.navbar-toggler{
-            margin-right: 40rem;
-            margin-top: 3rem;
-            border: none;
-            
-        }
-    
-        span.navlink-text{
-            margin-right: 30rem;
-        }
-        
-        .nav-body a.active {
-            font-weight: bold;
-            color: #ffffff; 
-            background-color: #97C010; 
-            transition: 0.3s ease-in-out;
-        }
-        
-        .nav-body a.active .navlink-text{
-            color:#ffffff;
-        }
-        /* logo */
-       .logo-img{
-        display: none;
-       }
-    
-        /* social media icons */
-        .sc-container{
-        display: none;
-    }
-    .social-icon{
-        display: none;
-    }
-    
-    .copy-right-text{
-        display: none;
-    }
-    
-    
-    /* Service */
-    .service-card{
-        margin-left: 350px;
-        margin-top: 50px;
-    }
-    }
+  /* Service */
+  .service-card {
+    margin-left: 350px;
+    margin-top: 50px;
+  }
+}
