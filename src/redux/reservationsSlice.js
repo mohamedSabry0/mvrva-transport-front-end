@@ -1,3 +1,5 @@
+/** @format */
+
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
@@ -5,7 +7,11 @@ export const createReservation = createAsyncThunk(
   'reservations/create',
   async (reservation, { rejectWithValue }) => {
     try {
-      const response = await axios.post('http://localhost:3000/api/v1/reservations', { reservation });
+      const response = await axios.post(
+        'http://localhost:3000/api/v1/reservations',
+        { reservation },
+      );
+      console.log('Added successfully !');
       return response.data;
     } catch (err) {
       return rejectWithValue(err.response.data);
