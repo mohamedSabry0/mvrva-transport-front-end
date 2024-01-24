@@ -3,7 +3,7 @@ import axios from 'axios';
 
 // Thunk to fetch services from Rails API
 export const fetchServices = createAsyncThunk('services/fetchServices', async () => {
-  const response = await axios.get('http://127.0.0.1:3000/api/v1/services');
+  const response = await axios.get('http://127.0.0.1:3500/api/v1/services');
   return response.data.services;
 });
 

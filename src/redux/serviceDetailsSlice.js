@@ -3,7 +3,7 @@ import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams, Link } from 'react-router-dom';
-import { fetchServiceDetails } from '../redux/serviceDetailsSlice';
+import { fetchServiceDetails } from './serviceDetailsSlice';
 
 const ServiceDetails = () => {
   const dispatch = useDispatch();
