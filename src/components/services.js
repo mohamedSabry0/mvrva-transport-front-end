@@ -7,7 +7,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
 import { fetchServices } from '../redux/servicesSlice';
 
-const BasicExample2 = () => {
+const ServiceList = () => {
   const dispatch = useDispatch();
   const { data: services, status, error } = useSelector((state) => state.services);
   const [index, setIndex] = useState(0);
@@ -70,4 +70,4 @@ const BasicExample2 = () => {
   );
 };
 
-export default BasicExample2;
+export default ServiceList;

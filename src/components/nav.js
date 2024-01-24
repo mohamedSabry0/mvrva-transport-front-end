@@ -29,7 +29,7 @@ function BasicExample() {
       {/* Navbar Component */}
       <Navbar expand="lg" className="text-start nav-body">
         <Navbar.Brand
-          href="/"
+          href="/dashboard"
         >
           <img
             src={logoImg} // Replace with the actual path to your logo image
@@ -75,6 +75,15 @@ function BasicExample() {
               >
                 <span className="navlink-text">
                   Add Reservation
+                </span>
+              </Nav.Link>
+              <Nav.Link
+                href="/register"
+                onClick={() => handleNavLinkClick('register')}
+                className={activeNavLink === 'register' ? 'active' : ''}
+              >
+                <span className="navlink-text">
+                  register
                 </span>
               </Nav.Link>
             </Nav>
