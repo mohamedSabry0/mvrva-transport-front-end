@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import PropTypes from 'prop-types';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { Button, Form, Row, Col } from 'react-bootstrap';
+import { createReservation } from '../redux/reservationsSlice';
 
-const ReservationForm = ({ onConfirmReservation }) => {
+const ReservationForm = () => {
   const selectedService = useSelector((state) => state.selectedService);
   const [userName, setUserName] = useState('');
+  const dispatch = useDispatch();
 
   useEffect(() => {
     const name = localStorage.getItem('userName');
@@ -16,7 +17,14 @@ const ReservationForm = ({ onConfirmReservation }) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    onConfirmReservation();
+    const form = event.currentTarget;
+    const formData = new FormData(form);
+    const data = Object.fromEntries(formData);
+
+    dispatch(createReservation(data));
+
+    // Clear the form
+    form.reset();
   };
 
   if (!selectedService) {
@@ -35,13 +43,13 @@ const ReservationForm = ({ onConfirmReservation }) => {
         <Col>
           <Form.Group controlId="pickupAddress">
             <Form.Label>Pickup Address</Form.Label>
-            <Form.Control required type="text" placeholder="Enter Pickup Address" />
+            <Form.Control required type="text" placeholder="Enter Pickup Address" name="pickup_address" />
           </Form.Group>
         </Col>
         <Col>
           <Form.Group controlId="dropAddress">
             <Form.Label>Drop Address</Form.Label>
-            <Form.Control required type="text" placeholder="Enter Drop Address" />
+            <Form.Control required type="text" placeholder="Enter Drop Address" name="drop_address" />
           </Form.Group>
         </Col>
       </Row>
@@ -49,13 +57,13 @@ const ReservationForm = ({ onConfirmReservation }) => {
         <Col>
           <Form.Group controlId="contact">
             <Form.Label>Contact</Form.Label>
-            <Form.Control required type="text" placeholder="Enter Contact" />
+            <Form.Control required type="text" placeholder="Enter Contact" name="contact" />
           </Form.Group>
         </Col>
         <Col>
           <Form.Group controlId="pickupDate">
             <Form.Label>Pickup Date</Form.Label>
-            <Form.Control required type="date" placeholder="Enter Pickup Date" />
+            <Form.Control required type="date" placeholder="Enter Pickup Date" name="pickup_date" />
           </Form.Group>
         </Col>
       </Row>
@@ -75,10 +83,6 @@ const ReservationForm = ({ onConfirmReservation }) => {
       </Button>
     </Form>
   );
-};
-
-ReservationForm.propTypes = {
-  onConfirmReservation: PropTypes.func.isRequired,
 };
 
 export default ReservationForm;
