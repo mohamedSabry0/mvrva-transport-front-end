@@ -33,12 +33,6 @@
     font-weight: 800;
   }
 
-
-  .navlink-text {
-    font-size: 20px;
-    font-weight: 800;
-  }
-
   .sc-container {
     margin-top: 50px;
   }
@@ -58,7 +52,6 @@
   }
 
   .nav-body a.active .navlink-text {
-
     color: var(--main-color);
   }
 
@@ -68,11 +61,6 @@
     width: 90%;
     margin-left: 10%;
     overflow: hidden;
-  }
-  
-  .service-card {
-    margin-left: 350px;
-    margin-top: 50px;
   }
 
   .carousel-bg {
@@ -86,10 +74,10 @@
     margin-bottom: 20%;
   }
 
-.carousel-control-prev {
+  .carousel-control-prev {
     position: fixed;
     top: 50%;
-    left:14.8%;
+    left: 14.8%;
     background-color: #97c010;
     height: 45px;
     width: 90px;
@@ -101,7 +89,7 @@
   .carousel-control-next {
     position: fixed;
     top: 50%;
-    right:0;
+    right: 0;
     background-color: #97c010;
     height: 45px;
     width: 90px;
@@ -110,17 +98,15 @@
     font-size: 12px;  /* Adjust the value as needed */
   }
 
-
   .card-sizing {
     width: 20rem;
     height: 30rem;
     margin-left: -35%;
-    border:none;
+    border: none;
   }
 
   .showcase {
     margin-left: 500px;
-
     color: #fff;
   }
 
@@ -128,7 +114,6 @@
   .service-card {
     margin-left: 350px;
     margin-top: 50px;
-
   }
 }
 
@@ -163,7 +148,6 @@
   }
 
   .nav-body a.active .navlink-text {
-
     color: var(--main-color);
   }
 
