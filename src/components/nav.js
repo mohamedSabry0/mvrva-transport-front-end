@@ -42,7 +42,7 @@ function BasicExample() {
       <Navbar expand="lg" className="text-start nav-body">
         <Navbar.Brand
           href="/dashboard"
-        >
+        />
         <Navbar.Brand href="/">
           <img
             src={logoImg}

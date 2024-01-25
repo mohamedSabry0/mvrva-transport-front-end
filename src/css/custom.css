@@ -1,4 +1,3 @@
-
 :root {
   --main-color: #fff;
   --primary-color: #97c010;
@@ -24,9 +23,15 @@
   }
 
   .logo-img {
-    height: 150px; /* Adjust the height as needed */
-    width: auto; /* Maintain the aspect ratio */
-    margin-left: 26px; /* Optional: Add margin for spacing */
+    height: 150px;
+
+    /* Adjust the height as needed */
+    width: auto;
+
+    /* Maintain the aspect ratio */
+    margin-left: 26px;
+
+    /* Optional: Add margin for spacing */
   }
 
   .navlink-text {
@@ -70,138 +75,147 @@
     margin-top: 50px;
   }
 
+  .error-message {
     color: var(--main-color);
-  }
-
-  /* Services CSS */
-  .carousel-body {
-    height: 95vh;
-    width: 90%;
-    margin-left: 10%;
-  }
-
-  .carousel-bg {
-    background: #97c010;
-    overflow: hidden;
-  }
-  
-  .service-card {
-    margin-left: 350px;
-    margin-top: 50px;
-  }
-
-  .carousel-bg {
-    background: var(--main-color);
-    height: 100vh;
-    width: 100%;
-    margin-left: 5.5%;
-  }
-
-  .card-body {
-    margin-bottom: 20%;
-  }
-
-.carousel-control-prev {
-    position: fixed;
-    top: 50%;
-    left:14.8%;
-    background-color: #97c010;
-    height: 45px;
-    width: 90px;
-    border-top-right-radius: 35px;  /* Adjust the value as needed */
-    border-bottom-right-radius: 35px;
-    font-size: 12px;  /* Adjust the value as needed */
-  }
-
-  .carousel-control-next {
-    position: fixed;
-    top: 50%;
-    right:0;
-    background-color: #97c010;
-    height: 45px;
-    width: 90px;
-    border-top-left-radius: 35px;  /* Adjust the value as needed */
-    border-bottom-left-radius: 35px;
-    font-size: 12px;  /* Adjust the value as needed */
-  }
-
-  .card-sizing {
-    width: 20rem;
-    height: 30rem;
-    margin-left: -35%;
-    border:none;
-  }
-
-  .showcase {
-    margin-left: 500px;
-
-    color: #fff;
-  }
-
-  /* Service */
-  .service-card {
-    margin-left: 350px;
-    margin-top: 50px;
   }
 }
 
+/* Services CSS */
+.carousel-body {
+  height: 95vh;
+  width: 90%;
+  margin-left: 10%;
+}
+
+.carousel-bg {
+  background: #97c010;
+  overflow: hidden;
+}
+
+.service-card {
+  margin-left: 350px;
+  margin-top: 50px;
+}
+
+.carousel-bg {
+  background: var(--main-color);
+  height: 100vh;
+  width: 100%;
+  margin-left: 5.5%;
+}
+
+.card-body {
+  margin-bottom: 20%;
+}
+
+.carousel-control-prev {
+  position: fixed;
+  top: 50%;
+  left: 14.8%;
+  background-color: #97c010;
+  height: 45px;
+  width: 90px;
+  border-top-right-radius: 35px;
+
+  /* Adjust the value as needed */
+  border-bottom-right-radius: 35px;
+  font-size: 12px;
+
+  /* Adjust the value as needed */
+}
+
+.carousel-control-next {
+  position: fixed;
+  top: 50%;
+  right: 0;
+  background-color: #97c010;
+  height: 45px;
+  width: 90px;
+  border-top-left-radius: 35px;
+
+  /* Adjust the value as needed */
+  border-bottom-left-radius: 35px;
+  font-size: 12px;
+
+  /* Adjust the value as needed */
+}
+
+.card-sizing {
+  width: 20rem;
+  height: 30rem;
+  margin-left: -35%;
+  border: none;
+}
+
+.showcase {
+  margin-left: 500px;
+  color: #fff;
+}
+
+/* Service */
+.service-card {
+  margin-left: 350px;
+  margin-top: 50px;
+}
+
+
 /* Responsivness for mobile */
 @media screen and (max-width: 991px) and (min-width: 320px) {
+  @media screen and (max-width: 768px) and (min-width: 320px) {
+    /* navbar */
+    .nav-body {
+      background: transparent;
+    }
 
-@media screen and (max-width: 768px) and (min-width: 320px) {
-  /* navbar */
-  .nav-body {
-    background: transparent;
-  }
+    .navlink-text {
+      font-size: 12px;
+      font-weight: 600;
+    }
 
-  .navlink-text {
-    font-size: 12px;
-    font-weight: 600;
-  }
+    button.navbar-toggler {
+      margin-right: 40rem;
+      margin-top: 3rem;
+      border: none;
+    }
 
-  button.navbar-toggler {
-    margin-right: 40rem;
-    margin-top: 3rem;
-    border: none;
-  }
+    span.navlink-text {
+      margin-right: 30rem;
+    }
 
-  span.navlink-text {
-    margin-right: 30rem;
-  }
+    .nav-body a.active {
+      font-weight: bold;
+      color: #fff;
+      background-color: #97c010;
+      transition: 0.3s ease-in-out;
+    }
 
-  .nav-body a.active {
-    font-weight: bold;
-    color: #fff;
-    background-color: #97c010;
-    transition: 0.3s ease-in-out;
-  }
+    .nav-body a.active .navlink-text {
+      color: #fff;
+      color: var(--main-color);
+    }
 
-  .nav-body a.active .navlink-text {
-    color: #fff;
-    color: var(--main-color);
-  }
+    /* logo */
+    .logo-img {
+      display: none;
+    }
 
-  /* logo */
-  .logo-img {
-    display: none;
-  }
+    /* social media icons */
+    .sc-container {
+      display: none;
+    }
 
-  /* social media icons */
-  .sc-container {
-    display: none;
-  }
+    .social-icon {
+      display: none;
+    }
 
-  .social-icon {
-    display: none;
-  }
+    .copy-right-text {
+      display: none;
+    }
 
-  .copy-right-text {
-    display: none;
-  }
-
-  /* Service */
-  .service-card {
-    margin-left: 350px;
-    margin-top: 50px;
+    /* Service */
+    .service-card {
+      margin-left: 350px;
+      margin-top: 50px;
+    }
   }
 }

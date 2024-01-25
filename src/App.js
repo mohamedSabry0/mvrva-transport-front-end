@@ -30,18 +30,5 @@ const App = () => (
     </Router>
   </Provider>
 );
-          <Routes>
-            <Route path="/services/:id" element={<ServiceDetails />} />
-            <Route path="/api/v1/services" element={<ServiceList />} />
-            <Route path="/reserve-form" element={<FormExample />} />
-            <Route path="/my-reservations" element={<div>Action 3.1 Content</div>} />
-            <Route path="/add-reservation" element={<div>Link Content</div>} />
-            <Route path="/" element={<ServiceList />} />
-          </Routes>
-        </>
-      </Router>
-    </Provider>
-  );
-}
 
 export default App;

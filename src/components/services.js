@@ -1,11 +1,8 @@
-// ServiceList.js
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Carousel from 'react-bootstrap/Carousel';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  Card, Row, Col, Container,
-} from 'react-bootstrap';
+import { Card, Row, Col, Container } from 'react-bootstrap';
 import { faTwitter, faFacebook, faGithub } from '@fortawesome/free-brands-svg-icons';
 import { useDispatch, useSelector } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
@@ -14,6 +11,7 @@ import { fetchServices } from '../redux/servicesSlice';
 const ServiceList = () => {
   const dispatch = useDispatch();
   const { data: services, status, error } = useSelector((state) => state.services);
+  const { isAuthenticated, user } = useSelector((state) => state.auth); // Assuming user information is stored in the auth state
   const [index, setIndex] = useState(0);
 
   const handleSelect = (selectedIndex) => {
@@ -48,6 +46,14 @@ const ServiceList = () => {
 
   return (
     <>
+      {isAuthenticated && (
+        <div>
+          {/* Display user information */}
+          Welcome, {user.email}! {/* Replace 'username' with the actual property you have for the username */}
+          {console.log(user)}
+        </div>
+      )}
+
       <Carousel activeIndex={index} onSelect={handleSelect} className="carousel-body">
         {groupedServices.map((group) => (
           <Carousel.Item key={uuidv4()} className="carousel-bg">
@@ -91,7 +97,6 @@ const ServiceList = () => {
                               >
                                 <FontAwesomeIcon icon={faGithub} size="2x" />
                               </a>
-
                             </div>
                           </Container>
                         </Card.Body>

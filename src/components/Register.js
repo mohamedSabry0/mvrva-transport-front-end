@@ -6,8 +6,8 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useDispatch, useSelector } from 'react-redux';
-import { registerUser } from '../redux/registerSlice';
 import { useNavigate } from 'react-router';
+import { registerUser } from '../redux/registerSlice';
 
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/;
@@ -64,7 +64,7 @@ const Register = () => {
     if (v1 && v2) {
       dispatch(registerUser({ email, password }));
     } else {
-      setErrMsg("Invalid Entry. Please check email and password formats.");
+      setErrMsg('Invalid Entry. Please check email and password formats.');
     }
   };
 
@@ -149,11 +149,16 @@ const Register = () => {
               Must include uppercase and lowercase letters, a number, and a
               special character.
               <br />
-              Allowed special characters:{' '}
-              <span aria-label="exclamation mark">!</span>{' '}
-              <span aria-label="at symbol">@</span>{' '}
-              <span aria-label="hashtag">#</span>{' '}
-              <span aria-label="dollar sign">$</span>{' '}
+              Allowed special characters:
+              {' '}
+              <span aria-label="exclamation mark">!</span>
+              {' '}
+              <span aria-label="at symbol">@</span>
+              {' '}
+              <span aria-label="hashtag">#</span>
+              {' '}
+              <span aria-label="dollar sign">$</span>
+              {' '}
               <span aria-label="percent">%</span>
             </p>
 
