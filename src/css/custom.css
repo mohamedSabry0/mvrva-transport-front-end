@@ -1,3 +1,4 @@
+
 :root {
   --main-color: #fff;
   --primary-color: #97c010;
@@ -7,7 +8,6 @@
 
 /* Navbar CSS responsiveness for desktop */
 @media screen and (min-width: 992px) {
-  /* Navbar CSS */
   .nav-body {
     position: fixed;
     top: 0;
@@ -33,6 +33,12 @@
     font-weight: 800;
   }
 
+
+  .navlink-text {
+    font-size: 20px;
+    font-weight: 800;
+  }
+
   .sc-container {
     margin-top: 50px;
   }
@@ -52,6 +58,7 @@
   }
 
   .nav-body a.active .navlink-text {
+
     color: var(--main-color);
   }
 
@@ -113,11 +120,21 @@
 
   .showcase {
     margin-left: 500px;
+
+    color: #fff;
+  }
+
+  /* Service */
+  .service-card {
+    margin-left: 350px;
+    margin-top: 50px;
+
   }
 }
 
 /* Responsivness for mobile */
-@media screen and (max-width: 991px) and (min-width: 320px) {
+
+@media screen and (max-width: 768px) and (min-width: 320px) {
   /* navbar */
   .nav-body {
     background: transparent;
@@ -146,6 +163,7 @@
   }
 
   .nav-body a.active .navlink-text {
+
     color: var(--main-color);
   }
 
