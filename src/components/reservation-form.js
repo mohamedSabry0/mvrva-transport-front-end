@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { useState, useEffect } from 'react';
 import Button from 'react-bootstrap/Button';
 import { Form, Row, Col } from 'react-bootstrap';
@@ -7,6 +8,14 @@ import { createReservation } from '../redux/reservationsSlice';
 function ReservationForm() {
   const [validated, setValidated] = useState(false);
   const [services, setServices] = useState([]);
+  const [formData, setFormData] = useState({
+    pickup_address: '',
+    drop_address: '',
+    description: '',
+    contact: '',
+    pickup_date: '',
+    service_id: '',
+  });
 
   // Fetch services when component mounts
   useEffect(() => {
@@ -17,6 +26,13 @@ function ReservationForm() {
 
   const dispatch = useDispatch();
 
+  const handleChange = (event) => {
+    setFormData({
+      ...formData,
+      [event.target.name]: event.target.value,
+    });
+  };
+
   const handleSubmit = async (event) => {
     event.preventDefault();
 
@@ -24,13 +40,17 @@ function ReservationForm() {
     if (form.checkValidity() === false) {
       event.stopPropagation();
     } else {
-      const formData = new FormData(form);
-      const data = Object.fromEntries(formData);
-
-      dispatch(createReservation(data));
+      dispatch(createReservation(formData));
 
       // Clear the form
-      form.reset();
+      setFormData({
+        pickup_address: '',
+        drop_address: '',
+        description: '',
+        contact: '',
+        pickup_date: '',
+        service_id: '',
+      });
       setValidated(false);
     }
 
@@ -38,52 +58,10 @@ function ReservationForm() {
   };
 
   return (
-    <Form noValidate validated={validated} onSubmit={handleSubmit} className="form-background d-flex flex-column justify-content-center align-items-center vh-100">
-      <Row>
-        <Col lg={4}>
-          <Form.Group className="mb-3" controlId="pickupAddress">
-            <Form.Control required type="text" placeholder="Pickup Address" className="form-control" name="pickup_address" />
-          </Form.Group>
-        </Col>
-        <Col lg={4}>
-          <Form.Group className="mb-3" controlId="dropAddress">
-            <Form.Control required type="text" placeholder="Drop Address" className="form-control" name="drop_address" />
-          </Form.Group>
-        </Col>
-        <Col lg={4}>
-          <Form.Group className="mb-3" controlId="description">
-            <Form.Control required type="text" placeholder="Description" className="form-control" name="description" />
-          </Form.Group>
-        </Col>
-      </Row>
-      <Row>
-        <Col lg={4}>
-          <Form.Group className="mb-3" controlId="contact">
-            <Form.Control required type="text" placeholder="Contact" className="form-control" name="contact" />
-          </Form.Group>
-        </Col>
-        <Col lg={4}>
-          <Form.Group className="mb-3" controlId="pickupDate">
-            <Form.Control required type="date" placeholder="Pickup Date" className="form-control" name="pickup_date" />
-          </Form.Group>
-        </Col>
-        <Col lg={4}>
-          <Form.Group className="mb-3" controlId="serviceId">
-            <Form.Control as="select" required className="form-control" name="service_id">
-              <option value="">Select a service</option>
-              {Array.isArray(services) && services.map((service) => (
-                <option value={service.id} key={service.id}>
-                  {service.name}
-                </option>
-              ))}
-            </Form.Control>
-          </Form.Group>
-        </Col>
-      </Row>
-      <Button variant="primary" type="submit">
-        Submit
-      </Button>
-    </Form>
+    // ...
+    // Use the formData state variable and the handleChange function in your form controls
+    <Form.Control required type="text" placeholder="Pickup Address" className="form-control" name="pickup_address" value={formData.pickup_address} onChange={handleChange} />
+    // ...
   );
 }
 

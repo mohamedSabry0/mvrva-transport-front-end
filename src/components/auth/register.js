@@ -67,15 +67,15 @@ function Register() {
       <form onSubmit={onSubmit}>
         <div>
           {/* <label>Name</label> */}
-          <input type="text" name="name" value={name} onChange={onChange} />
+          <input type="text" name="name" value={name} onChange={onChange} placeholder="Name" />
         </div>
         <div>
           {/* <label>Email</label> */}
-          <input type="email" name="email" value={email} onChange={onChange} />
+          <input type="email" name="email" value={email} onChange={onChange} placeholder="Email" />
         </div>
         <div>
           {/* <label>Password</label> */}
-          <input type="password" name="password" value={password} onChange={onChange} />
+          <input type="password" name="password" value={password} onChange={onChange} placeholder="Password" />
         </div>
         <button type="submit">Register</button>
       </form>
