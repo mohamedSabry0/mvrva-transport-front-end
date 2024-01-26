@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { Button, Form, Row, Col } from 'react-bootstrap';
+import {
+  Button, Form, Row, Col,
+} from 'react-bootstrap';
 import { createReservation } from '../redux/reservationsSlice';
 
 const ReservationForm = () => {
@@ -66,6 +68,7 @@ const ReservationForm = () => {
             <Form.Control required type="date" placeholder="Enter Pickup Date" name="pickup_date" />
           </Form.Group>
         </Col>
+        <Form.Control type="hidden" name="description" value={selectedService.description} />
       </Row>
       <p>
         Description:
