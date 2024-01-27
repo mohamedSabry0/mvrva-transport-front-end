@@ -4,7 +4,7 @@ import {
   Button, Form, Row, Col,
 } from 'react-bootstrap';
 import { createReservation } from '../redux/reservationsSlice';
-import { fetchUser, selectUser } from '../redux/userSlice';
+import { fetchCurrentUser, selectUser } from '../redux/userSlice';
 
 const ReservationForm = () => {
   const selectedService = useSelector((state) => state.selectedService);
@@ -18,7 +18,7 @@ const ReservationForm = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchUser());
+    dispatch(fetchCurrentUser());
   }, [dispatch]);
 
   const handleChange = (event) => {
@@ -31,8 +31,11 @@ const ReservationForm = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     dispatch(createReservation({
-      ...formData,
-      user_name: user.name,
+      reservation: {
+        ...formData,
+        service_id: selectedService.id,
+        user_id: user.id,
+      },
     }));
   };
 

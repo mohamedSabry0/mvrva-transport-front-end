@@ -4,17 +4,19 @@ import axios from 'axios';
 
 export const createReservation = createAsyncThunk(
   'reservations/create',
-  async (reservation, { rejectWithValue, getState }) => {
+  async ({ id, reservation }, { rejectWithValue, getState }) => {
     try {
-      // Get the JWT from the Redux state
-      const jwt = getState().auth.token;
+      // Get the JWT, email, and authentication token from the Redux state
+      const { Authorization, email, authenticationToken } = getState().auth.user;
 
       const response = await axios.post(
         'http://localhost:3000/api/v1/reservations',
-        { reservation },
+        { reservation, id },
         {
           headers: {
-            Authorization: `Bearer ${jwt}`,
+            Authorization: `Bearer ${Authorization}`,
+            'X-User-Email': email,
+            'X-User-Token': authenticationToken,
           },
         },
       );
