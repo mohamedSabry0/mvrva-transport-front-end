@@ -30,6 +30,7 @@ function Sidebar() {
   const handleNavLinkClick = (navLink) => {
     setActiveNavLink(navLink);
     localStorage.setItem('activeNavLink', navLink);
+    navigate(`/${navLink}`);
   };
 
   const dispatch = useDispatch();
@@ -63,7 +64,6 @@ function Sidebar() {
               {(!userRole) && (
                 <>
                   <Nav.Link
-                    href="/register"
                     onClick={() => handleNavLinkClick('register')}
                     className={activeNavLink === 'register' ? 'active' : ''}
                   >
@@ -74,7 +74,6 @@ function Sidebar() {
                     </span>
                   </Nav.Link>
                   <Nav.Link
-                    href="/login"
                     onClick={() => handleNavLinkClick('login')}
                     className={activeNavLink === 'login' ? 'active' : ''}
                   >
@@ -87,7 +86,6 @@ function Sidebar() {
                 </>
               )}
               <Nav.Link
-                href="/services"
                 onClick={() => {
                   handleNavLinkClick('services');
                   navigate('/services');
