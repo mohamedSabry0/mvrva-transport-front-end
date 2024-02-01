@@ -2,7 +2,6 @@
   "name": "mvrva-transport-front-end",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://mohamedsabry0.github.io/mvrva-transport-front-end",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.5.1",
     "@fortawesome/free-brands-svg-icons": "^5.15.4",
