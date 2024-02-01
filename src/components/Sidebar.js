@@ -30,6 +30,8 @@ function Sidebar() {
   const handleNavLinkClick = (navLink) => {
     setActiveNavLink(navLink);
     localStorage.setItem('activeNavLink', navLink);
+    navigate(`/${navLink}`);
+    handleClose();
   };
 
   const dispatch = useDispatch();
@@ -63,7 +65,6 @@ function Sidebar() {
               {(!userRole) && (
                 <>
                   <Nav.Link
-                    href="/register"
                     onClick={() => handleNavLinkClick('register')}
                     className={activeNavLink === 'register' ? 'active' : ''}
                   >
@@ -74,7 +75,6 @@ function Sidebar() {
                     </span>
                   </Nav.Link>
                   <Nav.Link
-                    href="/login"
                     onClick={() => handleNavLinkClick('login')}
                     className={activeNavLink === 'login' ? 'active' : ''}
                   >
@@ -87,11 +87,7 @@ function Sidebar() {
                 </>
               )}
               <Nav.Link
-                href="/services"
-                onClick={() => {
-                  handleNavLinkClick('services');
-                  navigate('/services');
-                }}
+                onClick={() => handleNavLinkClick('services')}
                 className={activeNavLink === 'services' ? 'active' : ''}
               >
                 <span className="navlink-text">
@@ -103,11 +99,7 @@ function Sidebar() {
               {(userRole === 'user' || userRole === 'admin') && (
                 <>
                   <Nav.Link
-                    href="/reserve-form"
-                    onClick={() => {
-                      handleNavLinkClick('reserve-form');
-                      navigate('/reserve-form');
-                    }}
+                    onClick={() => handleNavLinkClick('reserve-form')}
                     className={activeNavLink === 'reserve-form' ? 'active' : ''}
                   >
                     <span className="navlink-text">
@@ -117,11 +109,7 @@ function Sidebar() {
                     </span>
                   </Nav.Link>
                   <Nav.Link
-                    href="/my-reservations"
-                    onClick={() => {
-                      handleNavLinkClick('my-reservations');
-                      navigate('/my-reservations');
-                    }}
+                    onClick={() => handleNavLinkClick('my-reservations')}
                     className={activeNavLink === 'my-reservations' ? 'active' : ''}
                   >
                     <span className="navlink-text">
@@ -135,11 +123,7 @@ function Sidebar() {
               {userRole === 'admin' && (
                 <>
                   <Nav.Link
-                    href="/add-service"
-                    onClick={() => {
-                      handleNavLinkClick('add-reservation');
-                      navigate('/add-service');
-                    }}
+                    onClick={() => handleNavLinkClick('add-reservation')}
                     className={activeNavLink === 'add-reservation' ? 'active' : ''}
                   >
                     <span className="navlink-text">
@@ -149,11 +133,7 @@ function Sidebar() {
                     </span>
                   </Nav.Link>
                   <Nav.Link
-                    href="/delete-service"
-                    onClick={() => {
-                      handleNavLinkClick('delete-reservation');
-                      navigate('/delete-service');
-                    }}
+                    onClick={() => handleNavLinkClick('delete-reservation')}
                     className={activeNavLink === 'delete-reservation' ? 'active' : ''}
                   >
                     <span className="navlink-text">
@@ -218,7 +198,9 @@ function Sidebar() {
         <Offcanvas show={show} onHide={handleClose}>
           <Offcanvas.Header closeButton>
             <Offcanvas.Title>
-              <Navbar.Brand href="/">
+              <Navbar.Brand
+                onClick={() => handleNavLinkClick('')}
+              >
                 <img
                   src={logoImg}
                   alt="MVRVA Transport Logo"
@@ -233,7 +215,6 @@ function Sidebar() {
               {(!userRole) && (
                 <>
                   <Nav.Link
-                    href="/register"
                     onClick={() => handleNavLinkClick('register')}
                     className={activeNavLink === 'register' ? 'active' : ''}
                   >
@@ -244,7 +225,6 @@ function Sidebar() {
                     </span>
                   </Nav.Link>
                   <Nav.Link
-                    href="/login"
                     onClick={() => handleNavLinkClick('login')}
                     className={activeNavLink === 'login' ? 'active' : ''}
                   >
@@ -257,10 +237,8 @@ function Sidebar() {
                 </>
               )}
               <Nav.Link
-                href="/services"
                 onClick={() => {
                   handleNavLinkClick('services');
-                  navigate('/services');
                 }}
                 className={activeNavLink === 'services' ? 'active' : ''}
               >
@@ -273,10 +251,8 @@ function Sidebar() {
               {(userRole === 'user' || userRole === 'admin') && (
                 <>
                   <Nav.Link
-                    href="/reserve-form"
                     onClick={() => {
                       handleNavLinkClick('reserve-form');
-                      navigate('/reserve-form');
                     }}
                     className={activeNavLink === 'reserve-form' ? 'active' : ''}
                   >
@@ -287,10 +263,8 @@ function Sidebar() {
                     </span>
                   </Nav.Link>
                   <Nav.Link
-                    href="/my-reservations"
                     onClick={() => {
                       handleNavLinkClick('my-reservations');
-                      navigate('/my-reservations');
                     }}
                     className={activeNavLink === 'my-reservations' ? 'active' : ''}
                   >
@@ -305,12 +279,10 @@ function Sidebar() {
               {userRole === 'admin' && (
                 <>
                   <Nav.Link
-                    href="/add-service"
                     onClick={() => {
-                      handleNavLinkClick('add-reservation');
-                      navigate('/add-service');
+                      handleNavLinkClick('add-service');
                     }}
-                    className={activeNavLink === 'add-reservation' ? 'active' : ''}
+                    className={activeNavLink === 'add-service' ? 'active' : ''}
                   >
                     <span className="navlink-text">
                       <BsDatabaseFillAdd />
@@ -319,12 +291,10 @@ function Sidebar() {
                     </span>
                   </Nav.Link>
                   <Nav.Link
-                    href="/delete-service"
                     onClick={() => {
-                      handleNavLinkClick('delete-reservation');
-                      navigate('/delete-service');
+                      handleNavLinkClick('delete-service');
                     }}
-                    className={activeNavLink === 'delete-reservation' ? 'active' : ''}
+                    className={activeNavLink === 'delete-service' ? 'active' : ''}
                   >
                     <span className="navlink-text">
                       <BsTrash3 />

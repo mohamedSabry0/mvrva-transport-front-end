@@ -43,7 +43,7 @@ export const logout = createAsyncThunk('auth/logout', async () => {
   const token = localuser && localuser.Authorization;
 
   try {
-    const response = await axios.delete('http://localhost:4000/users/sign_out', {
+    const response = await axios.delete('https://mvrva-transport-11td.onrender.com/users/sign_out', {
       headers: {
         Authorization: `Bearer ${token}`,
       },
