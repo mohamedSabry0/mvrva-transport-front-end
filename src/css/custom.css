@@ -1,0 +1,608 @@
+:root {
+  --main-color: #fff;
+  --primary-color: #97c010;
+  --secondary-color: #464646;
+  --border-color: #dee2e6;
+}
+
+/* Navbar CSS responsiveness for desktop */
+.nav-body {
+  z-index: 9999;
+  background: white;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 8px;
+  overflow: hidden;
+}
+
+.desktop-navlinks {
+  border-right: 1px solid var(--border-color);
+  height: 100%;
+}
+
+.app {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+  width: 100vw;
+  overflow: auto;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+
+#root {
+  width: 100vw;
+}
+
+.sidebar-container {
+  width: 15vw;
+  min-height: 100vh;
+}
+
+.main-container {
+  width: 85vw;
+  min-height: 100vh;
+}
+
+.service-details {
+  padding: 5% 7%;
+  color: var(--secondary-color);
+}
+
+.register-tab,
+.login-tab {
+  margin: 10% 10%;
+}
+
+.right-side-details {
+  width: 100%;
+  height: 100vh;
+}
+
+.bigger-stronger-heading {
+  font-size: 2em;
+  font-weight: bold;
+  padding: 5% 0%;
+}
+
+.smaller-min-cost {
+  font-size: 0.8em;
+  padding: 5% 0%;
+}
+
+.service-description {
+  padding: 5% 0%;
+}
+
+.discover-link {
+  text-decoration: none;
+  color: blue;
+  padding: 5% 0%;
+}
+
+.bigger-reserve-button {
+  font-size: 1.8em !important;
+  background-color: #97c010 !important;
+  padding-block: 5% !important;
+  color: #fff;
+  border: none !important;
+}
+
+.reserve-icon {
+  margin-right: 5px;
+}
+
+.arrow-icon {
+  margin-left: 5px;
+}
+
+.card-submit {
+  margin: 10% 5%;
+}
+
+.navbar-container {
+  width: 284px;
+  background-color: #fff;
+  color: white;
+}
+
+/* MainContent.css */
+.main-content-container {
+  flex-grow: 1;
+}
+
+.logo-img {
+  height: 150px;
+  width: auto;
+  margin-left: 26px;
+  margin-bottom: 8rem;
+}
+
+.navlink-text {
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.social-icon {
+  color: var(--secondary-color);
+  font-size: 12px;
+  padding: 5px;
+}
+
+.nav-body a.active {
+  font-weight: bold;
+  color: var(--main-color);
+  background-color: var(--primary-color);
+  width: calc(100% + 2 * 132px);
+  transition: 0.3s ease-in-out;
+}
+
+.nav-body a.active .navlink-text {
+  color: var(--main-color);
+}
+
+/* Services CSS  Service List */
+
+.carousel-body {
+  height: 80vh;
+}
+
+.carousel-bg {
+  background: var(--main-color);
+  height: 90vh;
+  width: 100%;
+}
+
+.service-header {
+  height: 15%;
+  padding: 2% 0%;
+}
+
+.card-body {
+  margin-bottom: 10%;
+  padding: 2% 0%;
+}
+
+.card-sizing {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: rgba(50, 50, 93, 0.25) 0 50px 100px -20px, rgba(0, 0, 0, 0.3) 0 30px 60px -30px, rgba(10, 37, 64, 0.35) 0 -2px 6px 0 inset;
+}
+
+.card-link {
+  text-decoration: none;
+}
+
+.custom-title-style {
+  color: var(--secondary-color);
+}
+
+.custom-card-text.card-text {
+  color: grey;
+  font-size: 1em;
+}
+
+.carousel-indicators .active {
+  background-color: var(--primary-color);
+}
+
+.carousel-control-prev {
+  top: 50%;
+  background-color: #97c010;
+  height: 45px;
+  width: 90px;
+  border-top-right-radius: 35px;
+  border-bottom-right-radius: 35px;
+  font-size: 12px;
+}
+
+.carousel-control-next {
+  top: 50%;
+  background-color: #97c010;
+  height: 45px;
+  width: 90px;
+  border-top-left-radius: 35px;
+  border-bottom-left-radius: 35px;
+  font-size: 12px;
+}
+
+.service-component {
+  width: 85vw;
+}
+
+.submit-btn {
+  margin-top: 10%;
+  margin-bottom: 15%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  background-color: #97c010;
+  border-color: #97c010;
+}
+
+.card-service {
+  padding: 10% 5%;
+}
+
+.reservation {
+  padding: 10% 5%;
+}
+
+.burger-mobile {
+  display: none;
+}
+
+.reservation-form {
+  padding: 10% 5%;
+}
+
+.logout-icon {
+  font-size: 30px;
+}
+
+.reserve-card-body {
+  padding: 2% 7%;
+}
+
+/* Mobile version */
+@media (max-width: 768px) {
+  .nav-body {
+    z-index: 9999;
+    background: transparent;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    overflow: hidden;
+  }
+
+  .copy-right-text {
+    display: block;
+  }
+
+  .sc-container .icons {
+    display: block;
+  }
+
+  .app {
+    display: flex;
+    flex-direction: row;
+    min-height: 100vh;
+    width: 100vw;
+    overflow: auto;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+  }
+
+  #root {
+    width: 100vw;
+  }
+
+  .main-container {
+    width: 100vw;
+    height: 0;
+  }
+
+  .sidebar {
+    border-right: none;
+    height: 100%;
+  }
+
+  /* Carousel design */
+
+  .carousel-inner {
+    height: 80vh;
+  }
+
+  .carousel-body {
+    width: 100vw;
+  }
+
+  .carousel-control-prev {
+    display: none;
+  }
+
+  .carousel-control-next {
+    display: none;
+  }
+
+  .carousel-indicators {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin-right: 42%;
+    margin-bottom: 1rem;
+    margin-left: 15%;
+  }
+
+  .custom-title-style {
+    font-size: 16px;
+  }
+
+  .custom-card-text.card-text {
+    font-size: 10px;
+    width: 100%;
+  }
+
+  .navlink-text {
+    font-weight: 300;
+    font-size: 1em;
+    color: var(--secondary-color);
+  }
+
+  .service-component {
+    width: 100vw;
+    height: 100vh;
+  }
+
+  .logo-img {
+    margin-bottom: 2rem;
+    width: 50px;
+    height: 50px;
+  }
+
+  .burger-mobile {
+    display: block;
+    margin: 35% 35%;
+    font-size: 30px;
+  }
+
+  .desktop-navlinks {
+    display: none;
+  }
+
+  .card-service {
+    padding: 20% 2%;
+    margin-right: 4%;
+  }
+
+  .reservation {
+    padding: 20% 2%;
+    margin-right: 4%;
+  }
+
+  .reservation-form {
+    padding: 20% 2%;
+    margin-right: 4%;
+  }
+
+  .card-submit {
+    padding: 10% 1%;
+    margin-right: 7%;
+  }
+
+  .service-details {
+    padding: 20% 7% !important;
+  }
+
+  .service-details .service-image {
+    width: 100% !important;
+    height: 30vh !important;
+  }
+
+  .service-header {
+    margin: 0% 0% !important;
+    padding-top: 2rem !important;
+    font-size: 12px;
+  }
+
+  .service-description {
+    font-size: 0.8em !important;
+  }
+
+  .card-body {
+    margin-bottom: 2%;
+  }
+
+  .card-sizing {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: rgba(50, 50, 93, 0.25) 0 30px 70px -10px, rgba(0, 0, 0, 0.3) 0 20px 40px -20px, rgba(10, 37, 64, 0.35) 0 -1px 3px 0 inset;
+  }
+}
+
+/* Medium screens */
+@media (max-width: 1198px) {
+  .nav-body {
+    z-index: 9999;
+    background: transparent;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    overflow: hidden;
+  }
+
+  .copy-right-text {
+    display: block;
+  }
+
+  .sc-container .icons {
+    display: block;
+  }
+
+  .app {
+    display: flex;
+    flex-direction: row;
+    min-height: 100vh;
+    width: 100vw;
+    overflow: auto;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+  }
+
+  #root {
+    width: 100vw;
+  }
+
+  .main-container {
+    width: 100vw;
+    min-height: 100vh;
+  }
+
+  .sidebar {
+    border-right: none;
+    height: 100%;
+  }
+
+  /* Carousel design */
+
+  .carousel-bg {
+    background: var(--main-color);
+    height: 80vh;
+    width: 85vw;
+  }
+
+  .carousel-indicators {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin-right: 15%;
+    margin-bottom: 1rem;
+    margin-left: 7%;
+  }
+
+  .carousel-control-prev {
+    display: none;
+  }
+
+  .carousel-control-next {
+    display: none;
+  }
+
+  .custom-title-style {
+    font-size: 16px;
+  }
+
+  .custom-card-text.card-text {
+    font-size: 10px;
+    width: 100%;
+  }
+
+  .navlink-text {
+    font-weight: 300;
+    font-size: 1em;
+    color: var(--secondary-color);
+  }
+
+  .service-component {
+    width: 90vw;
+  }
+
+  .logo-img {
+    margin-bottom: 2rem;
+    width: 50px;
+    height: 50px;
+  }
+
+  .burger-mobile {
+    display: block;
+    margin: 35% 35%;
+    font-size: 30px;
+  }
+
+  .desktop-navlinks {
+    display: none;
+  }
+
+  .card-service {
+    padding: 20% 2%;
+    margin-right: 4%;
+  }
+
+  .reservation {
+    padding: 20% 2%;
+    margin-right: 4%;
+  }
+
+  .reservation-form {
+    padding: 20% 2%;
+    margin-right: 4%;
+  }
+
+  .card-submit {
+    padding: 10% 1%;
+    margin-right: 7%;
+  }
+
+  .service-details {
+    padding: 20% 7% !important;
+  }
+
+  .service-details .service-image {
+    width: 100% !important;
+    height: 30vh !important;
+  }
+
+  .service-header {
+    margin-top: 3rem;
+    padding: 0% 0%;
+  }
+
+  .service-description {
+    font-size: 0.8em !important;
+  }
+
+  .card-body {
+    margin-bottom: 2%;
+  }
+
+  .card-sizing {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: rgba(50, 50, 93, 0.25) 0 30px 70px -10px, rgba(0, 0, 0, 0.3) 0 20px 40px -20px, rgba(10, 37, 64, 0.35) 0 -1px 3px 0 inset;
+  }
+}
+
+/* Extra large screens */
+@media (min-width: 1199px) and (max-width: 1750px) {
+  .sidebar-container {
+    width: 17vw;
+    min-height: 100vh;
+  }
+
+  .main-container {
+    width: 83vw;
+    min-height: 100vh;
+  }
+
+  .navlink-text {
+    font-size: 1.1em;
+    font-weight: 600;
+  }
+
+  .carousel-body {
+    height: 80vh;
+  }
+
+  .carousel-bg {
+    background: var(--main-color);
+    height: 70vh;
+    width: 100%;
+  }
+
+  .card-body {
+    margin-bottom: auto;
+  }
+}
