@@ -18,7 +18,7 @@ export const createReservation = createAsyncThunk(
 
     try {
       const response = await axios.post(
-        'http://localhost:4000/api/v1/reservations',
+        'https://mvrva-transport-11td.onrender.com/api/v1/reservations',
         { reservation },
         {
           headers: {
@@ -40,7 +40,7 @@ export const fetchReservations = createAsyncThunk(
     const token = localuser && localuser.Authorization;
 
     try {
-      const response = await axios.get('http://localhost:4000/api/v1/reservations', {
+      const response = await axios.get('https://mvrva-transport-11td.onrender.com/api/v1/reservations', {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -59,7 +59,7 @@ export const deleteReservation = createAsyncThunk(
     const token = localuser && localuser.Authorization;
 
     try {
-      await axios.delete(`http://localhost:4000/api/v1/reservations/${reservationId}`, {
+      await axios.delete(`https://mvrva-transport-11td.onrender.com/api/v1/reservations/${reservationId}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
